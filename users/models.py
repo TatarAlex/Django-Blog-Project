@@ -12,8 +12,9 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username}`s Profile'
 
-    def save(self):
-        super().save()
+    """def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
         # Open the image for the profile instance
         img = Image.open(self.image.path)  # resize image
 
@@ -22,5 +23,5 @@ class Profile(models.Model):
             # Resize and save it
             img.thumbnail(output_size)
             # Saving it
-            img.save(self.image.path)
+            img.save(self.image.path)"""
 
